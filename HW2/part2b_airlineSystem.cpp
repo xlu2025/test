@@ -1,4 +1,4 @@
-#include "airlineSystem.h"
+#include "part2b_airlineSystem.h"
 
 //Initialize all seats available
 void initializeSeatingChart(vector<vector<Seat> >& seatingChart) {
@@ -95,7 +95,7 @@ void chooseAutomatedSeat(vector<vector<Seat> >& seatingChart, vector<Passenger>&
     char seatClass;
 
     // Prompt the user for the class of seat they want
-    cout << "Please type ¡®F¡¯ for first class\nPlease type ¡®B¡¯ for business class\nOthers will be economy class: ";
+    cout << "Please type   F   for first class\nPlease type   B   for business class\nOthers will be economy class: ";
     cin >> seatClass;
 
     // Determine the range of rows based on seat class
@@ -175,7 +175,7 @@ void manualSeatSelection(vector<vector<Seat> >& seatingChart, vector<Passenger>&
     displaySeatingChart(seatingChart);
 
     // Prompt the user for the class of seat they want
-    cout << "Please type ¡®F¡¯ for first class\nPlease type ¡®B¡¯ for business class\nOthers will be economy class: ";
+    cout << "Please type   F   for first class\nPlease type   B   for business class\nOthers will be economy class: ";
     cin >> seatClass;
 
     // Determine the range of rows based on seat class
