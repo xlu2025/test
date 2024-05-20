@@ -1,0 +1,95 @@
+## 伪代码
+
+### Overview
+
+The program will manage seat reservations for a small airline's single plane with 72 seats arranged in 12 rows. The program will allow passengers and airline employees to log in and perform various functions, such as booking seats, viewing seating charts, and printing boarding passes.
+
+### Data Structures
+
+- **Seats Array:** A 2D array (`seats[12][6]`) to represent the seating chart.
+  - Each row corresponds to a row on the plane.
+  - Each column corresponds to a seat (A, B, D, E, F, H).
+  - Use a `Seat` structure to store information about each seat, including passenger name and seat status (available or assigned).
+- **Passenger Manifest:** A list or array of `Passenger` structures.
+  - Each `Passenger` structure contains the passenger's name and their seat assignment.
+
+### Program Flow
+
+1. **Start Program**
+   - Initialize the seating chart.
+   - Load previous seat assignments and passenger manifest if available.
+   - Display login menu.
+2. **Login Menu**
+   - Display options for logging in as a passenger or airline employee.
+   - For passengers, prompt for their name.
+   - For employees, prompt for user-name and password.
+3. **Main Menu (Passenger)**
+   - Display options:
+     1. Display seating chart.
+     2. Choose a seat (automated system).
+     3. Manually choose a seat.
+     4. Change or cancel seat assignment.
+     5. Print boarding pass.
+     6. Quit program.
+4. **Main Menu (Employee)**
+   - Display options:
+     1. Display seating chart.
+     2. Print passenger manifest.
+     3. Load previous seat assignments and manifest.
+     4. Save current seat assignments and manifest.
+     5. Re-assign or cancel seat assignment.
+     6. Quit program.
+
+### Detailed Steps
+
+#### Display Seating Chart
+
+- Loop through the seating chart array and display the status of each seat (e.g., empty or assigned).
+
+#### Choose a Seat (Automated System)
+
+- Randomly select a seat from the available seats.
+- If no seats are available, display "Next flight leaves in 3 hours."
+
+#### Manually Choose a Seat
+
+- Display the seating chart.
+- Prompt the user to choose a class (First, Business, Economy).
+- Based on the class, display available seats in that section.
+- Allow the user to select a specific seat.
+
+#### Change or Cancel Seat Assignment
+
+- Prompt the user for their name and seat number.
+- Verify the seat assignment.
+- Allow the user to change to an available seat or cancel the seat assignment.
+
+#### Print Boarding Pass
+
+- Prompt the user for their name or seat number.
+- Verify the seat assignment.
+- If assigned, print the boarding pass with passenger name, seat number, and class.
+
+#### Print Passenger Manifest (Employee)
+
+- Display options to print the manifest sorted by seat number, name, or class.
+- Loop through the passenger manifest and print details in the chosen order.
+
+#### Load and Save Seat Assignments and Manifest (Employee)
+
+- Implement file operations to load and save the current state of seat assignments and passenger manifest.
+
+### Helper Functions
+
+1. **Initialize Seating Chart**
+   - Initialize the 2D array to indicate all seats are available.
+2. **Load Seat Assignments**
+   - Read from a file and update the seating chart and passenger manifest.
+3. **Save Seat Assignments**
+   - Write the current seating chart and passenger manifest to a file.
+4. **Generate Random Seat**
+   - Generate random row and column indices.
+   - Check if the seat is available.
+   - Repeat until an available seat is found.
+5. **Display Menu Options**
+   - Utility function to display menu options and validate user input.
