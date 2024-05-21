@@ -334,7 +334,7 @@ void changeOrCancelSeat(vector<vector<Seat> >& seatingChart, vector<Passenger>& 
                 return;
             }
 
-            if (seatingChart[newRow][newCol].isAssigned) {
+            if (!seatingChart[newRow][newCol].isAssigned) {
                 cout << "Seat " << newSeat << " is already taken." << endl;
                 return;
             }
